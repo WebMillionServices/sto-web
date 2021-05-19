@@ -1,0 +1,348 @@
+openapi: 3.0.0
+info:
+  title: Api-Lookup-Documentation
+  description: Welcome to Api Documentation Swagger + Redoc
+  version: v1.0.0
+
+referenceDocs:
+  showConsole: true 
+
+servers:
+# - url: https://virtserver.swaggerhub.com/techie-praga/Api-Lookup-Documentation/v1.0.0
+#   description: SwaggerHub API Auto Mocking
+- url: https://localhost:44370/v1/
+  description: developement.server
+
+securityDefinitions:
+  # X-API-Key: abcdef12345
+  APIKeyHeader:
+    type: apiKey
+    in: header
+    name: X-API-Key
+  # /path?api_key=abcdef12345
+  APIKeyQueryParam:
+    type: apiKey
+    in: query
+    name: api_key
+
+securityScheme:
+  type: apiKey
+  name: api_key
+  in: header
+
+Global security (applies to all operations):
+security:
+  - APIKeyHeader: []
+  
+tags:
+- name: Lookups
+paths:
+  /{accountId}/lookup/scale-metrics:
+    get:
+      tags:
+      - Lookups
+      description: returns scale metrics
+      operationId: scalemetrics
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      x-code-samples:
+        - lang: 'JQuery'
+          source: |
+            $.ajax({
+                  url: `${accountId}/lookups/scale-metrics/`,
+                  method: "GET",
+                  success: function (response) {
+                    // YOUR CODE
+                  },
+              });
+        - lang: 'C#'
+          source: |
+            static async Task<List<ScaleMetrics>> GetScaleMetricsAsync(Guid accountId)
+            {
+                string path = $"/{accountId}/lookup/scale-metrics";
+                List<ScaleMetrics> scaleMetrics = null;
+                HttpResponseMessage response = await client.GetAsync(path);
+                if (response.IsSuccessStatusCode)
+                {
+                  scaleMetrics = await response.Content.ReadAsAsync<List<ScaleMetrics>>();
+                }
+                return scaleMetrics;
+            }
+            
+  /{accountId}/contact:
+    post:
+      tags:
+      - Contact
+      description: create contact
+      operationId: contact
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: contactBookInfo
+        in: body
+        description: Object which represents Contact Book Info
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: object
+          properties: 
+              id:
+                type: string
+              firstName:
+                type: string
+              lastName:
+                type: string
+              emailInfo: 
+                type: object
+                properties: 
+                  id:
+                    type: string
+                  emailId:
+                    type: string
+              contactNumberInfo:
+                type: object
+                properties: 
+                  id:
+                    type: string
+                  contactNumber:
+                    type: string
+                  countryInfo:
+                    type: object
+                    properties: 
+                      id:
+                        type: number
+              dateOfBirth:
+                type: string
+              genderInfo:
+                type: object
+                properties: 
+                  gender:
+                    type: object
+              contactStageInfo:
+                type: object
+                properties: 
+                  id:
+                    type: number
+              contactStatusInfo:
+                type: object
+                properties: 
+                  id:
+                    type: number
+              contactSourceInfo:
+                type: object
+                properties: 
+                  id:
+                    type: number
+              addressInfo:
+                type: object
+                properties: 
+                  id:
+                    type: string
+                  addressLine1:
+                    type: string
+                  addressLine2:
+                    type: string
+                  zipCode:
+                    type: string
+                  cityInfo:
+                    type: object
+                    properties: 
+                      id:
+                        type: int
+                  geoLocationInfo:
+                    type: object
+                    properties: 
+                      id:
+                        type: int
+                  countryInfo:
+                    type: object
+                    properties: 
+                      id:
+                        type: int
+              inquiryInfo:
+                type: object
+                properties: 
+                  id:
+                    type: string
+                  contactBookInfoId:
+                    type: string
+                  message:
+                    type: string
+                  inquiryTypeInfo:
+                    type: object
+                    properties: 
+                      id:
+                        type: number
+                  inquirySourceInfo:
+                    type: object
+                    properties: 
+                      inquiryType:
+                        type: string
+                  taxUserTypeInfo:
+                    type: object
+                    properties: 
+                      id:
+                        type: string
+      x-code-samples:
+        - lang: 'JQuery'
+          source: |
+            $.ajax({
+                  url: `${accountId}/contact`,
+                  method: "POST",
+                  data: contactBookInfo,
+                  success: function (response) {
+                    // YOUR CODE
+                  },
+              });
+        - lang: 'C#'
+          source: |
+            static async Task<Guid> CreateContact(Guid accountId, ContactBookInfo contactBookInfo)
+            {
+                HttpResponseMessage response = await client.PostAsync(path, contactBookInfo);
+                if (response.IsSuccessStatusCode)
+                {
+                  var result = await response.Content.PostAsJsonAsync<contactBookInfo>();
+                }
+            }
+        - lang: 'Java'
+          source: |
+            static async Task<Guid> CreateContact(Guid accountId, ContactBookInfo contactBookInfo)
+            {
+              using (var client = new HttpClient())  
+              {   
+                var response = client.PostAsJsonAsync(path, contactBookInfo).Result;  
+                if (response.IsSuccessStatusCode)  
+                {  
+                  // Your Code
+                }  
+              } 
+            }
+        - lang: 'Python'
+          source: |
+            headers = {}
+            headers["Content-Type"]="application/json" 
+            r = requests.post( url = path, data = contactBookInfo, headers = headers )
+        - lang: 'PHP'
+          source: |
+            ˂?php
+              $post_json = json_encode($contactBookInfo);
+              $ch = @curl_init();
+              @curl_setopt($ch, CURLOPT_POST, true);
+              @curl_setopt($ch, CURLOPT_POSTFIELDS, $post_json);
+              @curl_setopt($ch, CURLOPT_URL, $path);
+              @curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+              @curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+              $response = @curl_exec($ch);
+              $status_code = @curl_getinfo($ch, CURLINFO_HTTP_CODE);
+              $curl_errors = curl_error($ch);
+              @curl_close($ch);
+              echo "curl Errors: " . $curl_errors;
+              echo "\nStatus code: " . $status_code;
+              echo "\nResponse: " . $response;
+            ?>
+        - lang: 'Node Js'
+          source: |
+            var request = require("request");
+
+            var options = { method: 'POST',
+              url: path,
+              headers: 
+              { 
+                'Content-Type': 'application/json' },
+              body: contactBookInfo,
+              json: true };
+
+            request(options, function (error, response, body) {
+              if (error) throw new Error(error){};
+            });
+        - lang: 'Js'
+          source: |
+            function createContact() {
+
+              var xhttp = new XMLHttpRequest();
+
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  // Your Code
+                }
+              };
+
+              xhttp.open("POST", path, true);
+              xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+              xhttp.send(contactBookInfo);
+            }
+
+
+      
+      responses:
+        "200":
+          description: Request Succeeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Lookups'
+        "401":
+          description: Unauthorized access, invalid credentials was used.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401'
+        "403":
+          description: Access Forbidden.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403'
+components:
+  schemas:
+    Lookups:
+      title: Successful response
+      type: object
+      example: {
+        data : [
+            {
+              id: M,
+              name: Meter
+            }
+          ],
+        succeeded : true,
+        status: SUCESS,
+        Errors: null
+      }
+    401:
+      title: Unauthorized access
+      type: object
+      example: {
+        data : null,
+        succeeded : false,
+        status: UNAUTHORIZED ACCESS,
+        Errors: null
+      }
+    403:
+      title: Access Forbidden
+      type: object
+      example: {
+        data : null,
+        succeeded : false,
+        status: ACCESS FORBIDDEN,
+        Errors: null
+      }
+  securitySchemes:
+    ApiAuthKey:
+      type: apiKey
+      name: X-Auth-Token
+      in: header
