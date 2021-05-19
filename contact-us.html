@@ -159,7 +159,7 @@
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6">
-            <div class="bord p-3">
+            <form class="bord p-3" action="contact-mail.php" method="post">
               <div class="text-center">
                 <h2>Get in Touch with Us</h2>
                 <p>Got a question or a product enquiry to make? Please fill in the form and we will be in touch with
@@ -168,28 +168,24 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <input type="text" class="form-control" id="first-name" name="first-name"
-                    placeholder="First Name"><span id="first-name-info" class="info"></span>
+                    placeholder="First Name">
                 </div>
                 <div class="form-group col-md-6">
-                  <input type="text" class="form-control" id="last-name" name="last-name" placeholder="Last Name"><span
-                    id="last-name-info" class="info"></span>
+                  <input type="text" class="form-control" id="last-name" name="last-name" placeholder="Last Name">
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <input type="email" class="form-control" id="email" name="email" placeholder="Email"><span
-                    id="email-info" class="info"></span>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                 </div>
 
                 <div class="form-group col-md-6">
-                  <input type="tel" class="form-control" id="phone" name="phone"><span id="phone-info"
-                    class="info"></span>
+                  <input type="tel" class="form-control" id="phone" name="phone">
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <input type="text" class="form-control" id="c-name" name="c-name" placeholder="Company Name"><span
-                    id="c-name-info" class="info"></span>
+                  <input type="text" class="form-control" id="c-name" name="c-name" placeholder="Company Name">
                 </div>
                 <div class="form-group col-md-6">
                   <select class="form-control" id="region">
@@ -200,7 +196,6 @@
                   </select>
                 </div>
               </div>
-
               <div class="form-row" id="ExpandRow" style="display:none">
                 <div class="form-group col-md-6">
                   <select class="form-control" id="property">
@@ -254,17 +249,15 @@
                   </div>
                 </div>
               </div>
-
               <div class="form-row">
                 <div class="form-group col-md-12">
                   <textarea class="form-control" id="message" rows="3" placeholder="Message"></textarea>
                 </div>
               </div>
               <div class="text-center">
-                <button type="submit" onClick="sendContact();" class="btn btn-custom">Submit</button>
+                <button type="submit" class="btn btn-custom">Submit</button>
               </div>
-              <div id="contact-mail-status"></div>
-            </div>
+            </form>
           </div>
           <div class="col-md-3"></div>
         </div>
@@ -298,7 +291,7 @@
   <footer id="footer" class="pt-5">
     <h2 class="alter">StoRegister Footer</h2>
     <div class="container">
-      <div class="border-bottom pb-3">
+      <div class="pb-3">
         <div class="row">
           <div class="col-md-4">
             <div class="">
@@ -309,10 +302,9 @@
               </p>
               <div class="pt-4">
               <h3 class="">Our Social Handles</h3>
-                <a href=""><i class="fab fa-facebook-f"></i></a>
-                <a href=""><i class="fab fa-twitter"></i></a>
-                <a href=""><i class="fab fa-instagram"></i></a>
-                <a href=""><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.linkedin.com/company/storegister/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/Storegister/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com/storegister/" target="_blank"><i class="fab fa-twitter"></i></a>
               </div>
             </div>
           </div>
@@ -332,6 +324,14 @@
                 <li><a href="digital-marketing.html">Digital Marketing</a></li>
               </ul>
             </div>
+            <div class="padd-1">
+              <h3 class="">Resources</h3>
+              <ul class="list-unstyled">
+                <li><a href="api-doc/Index.html">API Documentation</a></li>
+                <!-- <li><a href="./">Blogs</a></li>
+                <li><a href="./">Knowledge Centre</a></li> -->
+              </ul>
+            </div>
           </div>
           <div class="col-md-2">
             <div class="padd">
@@ -344,11 +344,10 @@
               </ul>
             </div>
             <div class="padd">
-              <h3 class="">Resources</h3>
+              <h3 class="">Legal</h3>
               <ul class="list-unstyled">
-                <li><a href="api-doc/Index.html">API Documentation</a></li>
-                <li><a href="./">Blogs</a></li>
-                <li><a href="./">Knowledge Centre</a></li>
+                <li><a href="terms-and-condition.html">Terms of Services</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
               </ul>
             </div>
           </div>
@@ -364,10 +363,12 @@
                 Bengaluru - 560047.<br>
                 Karnataka, INDIA.<br>
               </address>
-              <div class="">
-                <a href="mailto:sales@storegister.com" target="_blank"><i class="fas fa-envelope"></i>
-                  sales@storegister.com</a> <br>
-                <a href="tel:+442032900440" target="_blank"><i class="fas fa-phone-volume"></i> +44 20 3290 0440 </a>
+              <div class="pb-2">
+                <a href="mailto:sales@storegister.com" target="_blank" class=""><i class="fas fa-envelope"></i>
+                  sales@storegister.com</a>
+              </div>
+              <div class="pb-2">
+                <a href="tel:+442032900440" target="_blank" class=""><i class="fas fa-phone-volume"></i> +44 20 3290 0440 </a>
               </div>
             </div>
           </div>
@@ -375,13 +376,9 @@
       </div>
       <div class="">
         <div class="row">
-          <div class="col-md-6">
-            <p class="pt-2 pb-2 text-white">Copyright <i class="far fa-copyright"></i> 2021 All rights reserved - A
+          <div class="col-md-12">
+            <p class="pt-2 pb-2 text-white text-center">Copyright <i class="far fa-copyright"></i> 2021 All rights reserved - A
               Product by Pavilion Tree Solutions Private Limited.</p>
-          </div>
-          <div class="col-md-6">
-            <p class="pt-2 pb-2 text-white text-right"><a href="terms-and-condition.html" target="_blank">Terms of
-                Services</a> & <a href="privacy-policy.html" target="_blank">Privacy Policy</a></p>
           </div>
         </div>
       </div>
