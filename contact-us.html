@@ -161,7 +161,7 @@
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6">
-            <form class="bord p-3" action="./mail.php" method="post">
+            <form class="bord p-3" action="mail.php" method="post">
               <div class="text-center">
                 <h2>Get in Touch with Us</h2>
                 <p>Got a question or a product enquiry to make? Please fill in the form and we will be in touch with
@@ -169,7 +169,7 @@
               </div>
               <div class="form-row h-75">
                 <div class="form-group col-md-6">
-                  <input type="text" class="form-control" id="first-name" name="first-name"
+                  <input type="text" class="form-control" id="firstname" name="firstname"
                     placeholder="First Name" required>
                     <div class="valid-feedback">
                       
@@ -179,7 +179,7 @@
                     </div>
                 </div>
                 <div class="form-group col-md-6">
-                  <input type="text" class="form-control" id="last-name" name="last-name" placeholder="Last Name" required>
+                  <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" required>
                 </div>
               </div>
               <div class="form-row h-75">
@@ -443,7 +443,6 @@
         var fname = document.getElementById("last-name");
           fname.classList.add("is-valid");
           fname.classList.remove("is-invalid");
-          
       } else {
         var fname = document.getElementById("last-name");
           fname.classList.add("is-invalid");
