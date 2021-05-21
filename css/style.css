@@ -2,77 +2,37 @@ pre {
     color: #fff;
 }
 
-@media screen and (max-width: 1399px) and (min-width: 993px) {
-    #footer .padd-1 {
-        padding-left: 20px; 
-    }
-    #footer .padd {
-        padding-left: 30px; 
-    }
-    #footer h2, #footer h3, #footer h4 {
-        color: #fff;
-        font-size: 16px;
-        font-weight: 700;
-    }
-    #footer address {
-        font-size: 12px;
-    }
-    #footer a {
-        font-size: 12px;
-    }
-    #get-ready .btn-custom:hover {
-        background-color: #fff;
-        color: #015f5f;
-        border: 1px solid #015f5f;
-    }
+#integration-inner h2 {
+    font-size: 1.25rem;
+    color: #015f5f;
+}
+#access h3 {
+    font-size: 2rem;
+    color: #015f5f;
+}
+#digital-section-1 h2 {
+    font-size: 1.5rem;
+}
+#web-section-2 h3 {
+    font-size: 1.5rem;
+    color: #015f5f;
+}
+#pricing-1 h2 {
+    font-size: 1.25rem;
+    color: #015f5f;
+}
+#web-section-1 h2 {
+    font-size: 1.25rem;
+    color: #015f5f !important;
+}
+.h-75 {
+    height: 75px !important;
 }
 
-@media screen and (max-width: 1600px) and (min-width: 1400px){
-    #footer .padd-1 {
-        padding-left: 20px; 
-    }
-    #footer .padd {
-        padding-left: 30px; 
-    }
-    #footer h2, #footer h3, #footer h4 {
-        color: #fff;
-        font-size: 16px;
-        font-weight: 700;
-    }
-    #footer address {
-        font-size: 12px;
-    }
-    #footer a {
-        font-size: 12px;
-    }
-    #get-ready .btn-custom:hover {
-        background-color: #fff;
-        color: #015f5f;
-        border: 1px solid #015f5f;
-    }
+.h-100 {
+    height: 100px !important;
 }
 
-@media screen and (max-width: 1920px) and (min-width: 1601px) {
-    #footer .padd-1 {
-        padding-left: 20px; 
-    }
-    #footer .padd {
-        padding-left: 30px; 
-    }
-    #footer h2, #footer h3, #footer h4 {
-        color: #fff;
-        font-size: 12px;
-        font-weight: 700;
-    }
-    #footer address {
-        font-size: 12px;
-    }
-    #footer a {
-        font-size: 14px;
-    }
-    #get-ready .btn-custom:hover {
-        background-color: #fff;
-        color: #015f5f;
-        border: 1px solid #015f5f;
-    }
+.h-50 {
+    height: 50px !important;
 }
